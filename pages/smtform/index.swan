@@ -1,0 +1,44 @@
+
+<view class="wrap" s-if="login">
+<form bindsubmit="formSubmit" bindreset="formReset" report-submit="true" report-type="defalut">
+    <view class="card-area">
+        <view class="top-description border-bottom">
+            <view>请说出你的问题</view>
+        </view>
+        <textarea name="intro"
+            style="height: 1.12rem"
+            maxlength="-1"
+            disabled="{{false}}"
+            auto-focus="{{true}}"
+            placeholder="请说出你的问题"
+            confirm-hold="false"
+            placeholder-class="plh"
+            cursor="-1"
+            confirm-type="换行"
+            fixed="{{false}}"
+            focus="{{focus}}"
+            cursor-spacing="20"
+            show-confirm-bar="{{true}}"
+            selection-start="-1"
+            selection-end="-1"
+            adjust-position="{{true}}"
+            bindfocus="bindFocus"
+            bindblur="bindBlur"
+            bindlinechange="bindLineChange"
+            bindinput="bindInput"
+            bindconfirm="bindConfirm" />
+    <view class="top-description border-bottom">
+        <view><text>{{ Info }}</text>分配：{{ Alias }}</view>
+    </view>
+    </view>
+    <button formType="submit" type="primary">提交</button>
+</form>
+</view>
+<view class="wrap" s-else>
+    <view class="card-area">
+        <view class="card-login">
+            <login bindgetphonenumber="getphonenumber"
+            bindloaderror="loaderror" > </login>
+        </view>
+    </view>
+</view>

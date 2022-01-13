@@ -1,0 +1,5 @@
+{
+    "usingSwanComponents": {
+        "comment-list": "dynamicLib://myDynamicLib/comment-list"
+    }
+}

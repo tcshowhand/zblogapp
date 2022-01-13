@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "smt-icon": "@smt-ui/component/src/icon",
+        "recommend-feed": "dynamicLib://swanKit/recommend-feed"
+    },
+    "usingSwanComponents": {
+        "comment-list": "dynamicLib://myDynamicLib/comment-list"
+    }
+}

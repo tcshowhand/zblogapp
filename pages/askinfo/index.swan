@@ -1,0 +1,48 @@
+<view class="wrap">
+    <view class="card-area">
+        <view class="top-description border-bottom">
+            <view>{{ result.Title }}</view>
+            <view>{{ result.Typename }}</view>
+        </view>
+        <text class="text-box text-block" selectable="true">{{ result.Intro }}</text>
+
+        <view class="content-desp">
+            <view class="author-detail">
+                <image class="author-avator" mode="widthFix" src="{{ result.kongAvatar }}"></image>
+                <view class="author-other">
+                    <view class="author-name">咨询人员：{{ result.kongAlias }}<view class="author-v"></view>
+                    </view>
+                    <view class="publish-date"><block s-for="itemc, index in result.kongTagn" s-key="{{index}}">
+                    {{ itemc }}|</text>
+                </block></view>
+                </view>
+            </view>
+            <view class="follow-btn" s-for="item in followData">
+                <follow-swan size="default" type="{{ item.type }}" bindfavorstatuschange="statuschange" />
+            </view>
+        </view>
+    </view>
+
+    <view class="card-area">
+        <view class="top-description border-bottom">
+            <view>回复结果</view>
+        </view>
+        <view class="text-box">
+
+        <button type="primary" disabled s-if="{{result.Type==0}}">
+            正在回复中...
+        </button>
+        <rich-text s-if="{{result.Type > 0}}" nodes="{{result.Content}}" preview="true"></rich-text>
+    </view>
+</view>
+
+<view s-if="{{result.Type==1}}">
+<view class="post-comment" style="margin-top:12px;">
+<view class="top-description border-bottom">
+    <view>吐槽</view>
+</view>
+<comment-list comment-param="{{ commentParam }}" detail-path="{{ detailPath }}"
+    toolbar-config="{{ toolbarConfig }}" bindclickcomment="clickComment">
+</comment-list>
+</view>
+</view>

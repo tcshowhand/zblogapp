@@ -1,0 +1,6 @@
+{
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "banner": "dynamicLib://swanKit/banner"
+    }
+}

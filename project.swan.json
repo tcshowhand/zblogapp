@@ -1,0 +1,36 @@
+{
+    "appid": "18173408",
+    "compilation-args": {
+        "common": {
+            "babelSetting": {
+                "ignore": []
+            },
+            "enhance": true,
+            "ignoreTransJs": false,
+            "imgCompress": true
+        },
+        "options": [],
+        "selected": -2
+    },
+    "host": "baiduboxapp",
+    "preview": {
+        "packageId": 978891
+    },
+    "projectname": "bdapp",
+    "publish": {
+        "hideTips": true,
+        "tips": [],
+        "version": "1.0.16"
+    },
+    "setting": {
+        "autoAudits": false,
+        "enableScripts": false,
+        "urlCheck": true
+    },
+    "swan": {
+        "baiduboxapp": {
+            "swanJsVersion": "3.340.31",
+            "extensionJsVersion": "1.21.2"
+        }
+    }
+}

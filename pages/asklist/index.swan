@@ -1,0 +1,20 @@
+<view class="container">
+    <view s-for="item, index in navList" s-key="{{index}}" bindtap="detailsBtn" data-id='{{item.id}}' isCustom="{{true}}" hover-stay-time="100">
+
+        <view class="wutu" >
+            <view class="list-content p-0">
+                <view class="list-body">
+                    {{ item.title }}
+                </view>
+                <view class="list-desc">
+                    <rich-text nodes="{{item.intro}}" class="h-2x " type="text"></rich-text>
+                </view>
+                <view class="list-footer">
+                    <text class="item-meta">{{ typename }}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="read-more cu-load {{!state?'loading':'over'}}"></view>
+</view>
+<!-- 底部加载 -->

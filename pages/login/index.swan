@@ -1,0 +1,10 @@
+<view class="wrap">
+    <view class="card-area">
+        <view class="card-login">
+            <login s-if="showLogin"
+            bindgetphonenumber="getphonenumber"
+            bindloaderror="loaderror" > </login>
+            <view s-else>{{resData}} </view>
+        </view>
+    </view>
+</view>

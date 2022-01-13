@@ -1,0 +1,9 @@
+<!--pages/search/search.wxml-->
+<search
+    pageTitle="{{pageTitle}}"
+    searchBoxConf="{{searchBoxConf}}"
+    searchMode="{{searchMode}}"
+    searchResultConf="{{searchResultConf}}"
+    historyMode="{{historyMode}}"
+    appkey="{{appkey}}"
+/>

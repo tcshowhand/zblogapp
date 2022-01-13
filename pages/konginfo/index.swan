@@ -1,0 +1,57 @@
+
+
+<view class="main main-user-detail main-skin1">
+
+	<view class="top">
+		<view class="top-up bg-darkgreen bg-skin1">
+			<view class="school-cover" style="background-image:url({{ result.kongimg }})"></view>
+		</view>
+		<view class="card shadow">
+			<view class="avatar large border-skin1" style="background-image:url({{ result.Avatar }});">
+
+			</view>
+			<view class="attention">
+				<view class="msg" ></view>
+			</view>
+			<view class="name text-cut flex">
+				<view class="name-real text-cut"><text user-select="true">{{ result.Alias }}</text></view>
+				<view class="color-gray text-s margin-left-xs"><block s-for="itemc, index in result.Tagn" s-key="{{index}}">
+                    {{ itemc }}|</text>
+                </block></view>
+			</view>
+			<view class="study text-cut"><text
+					style="font-weight:normal"> {{ result.intro }}</text></view>
+			<view class="data text-cut">
+				<text class="text-gray text-s margin-right-s">{{ result.time }}</text>
+			</view>
+		</view>
+	</view>
+
+	<view class="content">
+		<view class="list">
+                <navigator url="/pages/smtform/index?id={{ result.ID }}" class="user-base shadow">
+					<view class="base-item">
+						<view class="left">在线咨询</view>
+						<view class="right">点击咨询</view>
+					</view>
+				</navigator>
+				<view class="user-base  shadow">
+					<view class="base-item">
+						<view class="left">已完成咨询</view>
+						<view class="right">{{ result.num }}次</view>
+					</view>
+				</view>
+				<view class="user-base  shadow"  bindtap="gomap">
+					<view class="base-item">
+						<view class="left">地址</view>
+						<view class="right">{{ result.add }}</view>
+					</view>
+				</view>
+
+		</view>
+	</view>
+</view>
+
+
+
+

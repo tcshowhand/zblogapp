@@ -1,0 +1,21 @@
+<view class="user-list">
+    <view class="item shadow" s-for="item, index in navList" s-key="{{index}}" bindtap="detailsBtn" data-id='{{item.ID}}' isCustom="{{true}}" hover-stay-time="100">
+        <view class="pic">
+            <view class="avatar round large" style="background-image:url({{item.Avatar}})">
+            </view>
+        </view>
+        <view class="detail">
+            <view class="name text-cut">
+                <text class="yname">{{item.Alias}}</text>
+                <text class="text-darkgreen color-red">
+                <block s-for="itemc, index in item.Tagn" s-key="{{index}}">
+                    {{ itemc }}<text class="line">|</text>
+                </block>
+                </text>
+            </view>
+            <view class="desc last text-cut margin-top-xs">
+                <text class="margin-right-s">{{item.time}}</text>
+            </view>
+        </view>
+    </view>
+</view>
