@@ -14,13 +14,13 @@
     },
     "host": "baiduboxapp",
     "preview": {
-        "packageId": 978891
+        "packageId": 979039
     },
     "projectname": "bdapp",
     "publish": {
         "hideTips": true,
         "tips": [],
-        "version": "1.0.16"
+        "version": "1.0.17"
     },
     "setting": {
         "autoAudits": false,

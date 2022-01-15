@@ -1,7 +1,8 @@
 // 首页
+import utils from '../../utils/request.js';
 const app = getApp();
 
-import utils from '../../utils/request.js';
+
 Page({
     data: {
         swiper: [],

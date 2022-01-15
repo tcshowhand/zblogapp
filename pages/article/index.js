@@ -41,7 +41,8 @@ Page({
      */
     getArticle() {
         utils.getArticle({
-            id: this.data.id
+            id: this.data.id,
+            viewnums:1
         }).then(res => {
             const post = res.data.post;
             post.Content = post.Content
