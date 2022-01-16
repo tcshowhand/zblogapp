@@ -1,11 +1,11 @@
 
 <view class="wrap" s-if="login">
-<form bindsubmit="formSubmit" bindreset="formReset" report-submit="true" report-type="defalut">
+
     <view class="card-area">
         <view class="top-description border-bottom">
             <view>请说出你的问题</view>
         </view>
-        <textarea name="intro"
+        <textarea bindinput ="introInput" name="intro"
             style="height: 1.12rem"
             maxlength="-1"
             disabled="{{false}}"
@@ -31,8 +31,13 @@
         <view><text>{{ Info }}</text>分配：{{ Alias }}</view>
     </view>
     </view>
-    <button formType="submit" type="primary">提交</button>
-</form>
+
+    <button s-if="onpay" bind:tap="requestPolymerPayment" type="primary" hover-stop-propagation="true">支付1元并提交</button>
+
+    <button s-else bind:tap="formSubmit" formType="submit" type="primary">提交</button>
+
+
+
 </view>
 <view class="wrap" s-else>
     <view class="card-area">

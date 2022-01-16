@@ -3,21 +3,6 @@ Page({
     data: {
 
     },
-    formSubmit(e) {
-
-        console.log(e.detail.formId)
-        utils.postSmtForm({
-            title: e.detail.value.intro,
-            uid: this.data.id,
-            formid: e.detail.formId
-        }).then(res => {
-            swan.showToast({
-                title: res.message,
-                icon: 'success',
-                duration: 1000
-            });
-        });
-    },
     onShow: function () {
         var login = 0;
         try {
@@ -37,6 +22,7 @@ Page({
             this.setData({
                 'uid': post.ID,
                 'Alias': post.Alias,
+                'onpay': post.onpay,
                 'Info': post.info,
             })
         });
@@ -79,6 +65,47 @@ Page({
         }
         this.setData({
             resData: res
+        });
+    },
+    introInput:function(e)
+    {
+        this.setData({
+            intro: e.detail.value
+        })
+    },
+    formSubmit(e) {
+        utils.postSmtForm({
+            title: this.data.intro,
+            uid: this.data.id
+        }).then(res => {
+            swan.showToast({
+                title: res.message,
+                icon: 'success',
+                duration: 1000
+            });
+        });
+    },
+    requestPolymerPayment(e) {
+        utils.userPay({
+            title: this.data.intro,
+            uid: this.data.id
+        }).then(res => {
+            let data = res.data;
+                if (data.errno !== 0) {
+                    console.log('create order err', data);
+                    return;
+                }
+                let orderInfo = data.data;
+                swan.requestPolymerPayment({
+                    orderInfo: orderInfo,
+                    bannedChannels: this.getData('bannedChannels'),
+                    success: res =>  {
+                        swan.showToast({
+                            title: '支付成功',
+                            icon: 'success'
+                        });
+                    }
+                });
         });
     },
 });

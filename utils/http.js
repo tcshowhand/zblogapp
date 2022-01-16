@@ -13,7 +13,8 @@ const urls = {
   askinfo: api + '?mod=ytecn&act=askinfo',
   konglist: api + '?mod=ytecn&act=konglist',
   konginfo: api + '?mod=ytecn&act=konginfo',
-  login: api + '?mod=member&act=login'
+  login: api + '?mod=member&act=login',
+  pay: api + '?mod=ytecn&act=pay',
 };
 
 export default urls;
