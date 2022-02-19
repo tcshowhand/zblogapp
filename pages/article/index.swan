@@ -34,6 +34,9 @@
     </view>
 </view>
 
+
+<ad appid="{{adid}}" apid="{{ad2}}" class="ad" type="feed" ></ad>
+
 <view class="post-center" style="margin-bottom:32px;" >
 <view class="mb-md-4">相关阅读</view>
     <view class="post-li" s-for="item, index in result.RelatedList" s-key="{{ index }}" bindtap="detailsBtn" data-id='{{ item.id }}'>

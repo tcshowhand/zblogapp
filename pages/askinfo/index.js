@@ -70,7 +70,7 @@ Page({
                 'toolbarConfig.share.title': post.kongAlias,
                 'toolbarConfig.share.path': '/pages/konginfo/index?id=' + post.kongId,
                 'detailPath': '/pages/konginfo/index?id=' + post.kongId,
-            })
+            });
         });
     },
 

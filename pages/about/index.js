@@ -5,8 +5,15 @@ const app = getApp();
 Page({
     data: {
     },
-
     onShow: function (options) {
+        swan.setPageInfo({
+            title:"个人中心",
+            keywords: "个人中心",
+            description: "个人中心",
+            articleTitle: "个人中心",
+            releaseDate: [],
+            image: []
+        });
         utils.getSettings({
         }).then(res => {
             this.setData({

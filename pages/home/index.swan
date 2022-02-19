@@ -66,6 +66,7 @@
                 </view>
             </view>
         </view>
+        <ad s-if="{{ index%10 == 3 }}" appid="{{adid}}" apid="{{ad1}}" class="ad" type="feed" ></ad>
     </view>
     <view class="read-more cu-load {{!state?'loading':'over'}}"></view>
 </view>

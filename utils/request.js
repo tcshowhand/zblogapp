@@ -213,6 +213,9 @@ module.exports = {
         });
     },
     sitemap: urls.home,
+    adid: urls.adid,
+    ad1: urls.ad1,
+    ad2: urls.ad2,
     toDate: toDate,
     formatMsgTime: formatMsgTime
 };

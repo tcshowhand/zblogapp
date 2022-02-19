@@ -15,6 +15,10 @@ const urls = {
   konginfo: api + '?mod=ytecn&act=konginfo',
   login: api + '?mod=member&act=login',
   pay: api + '?mod=ytecn&act=pay',
+  adid: config.adid,
+  ad1: config.ad1,
+  ad2: config.ad2,
+  ad3: config.ad3,
 };
 
 export default urls;

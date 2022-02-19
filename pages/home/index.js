@@ -10,6 +10,8 @@ Page({
         hostList: [],
         page: 1,
         state: false,
+        adid: utils.adid,
+        ad1: utils.ad1,
     },
     onLoad: function (options) {
         this.getHome();
