@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<banner moduleId="{{24}}"/>
+<banner moduleId="{{36}}"/>
 <view class='funcs'>
     <view class='func' s-for="item, index in toolnav" s-key="{{index}}">
     <navigator url="{{item.Url}}" class="overlay-hover" hover-class="none">

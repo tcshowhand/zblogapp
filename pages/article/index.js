@@ -169,4 +169,9 @@ Page({
             url: '/pages/smtform/index'
         });
     },
+    smttel() {
+        swan.makePhoneCall({
+            phoneNumber: this.data.result.tel
+        });
+    },
 });

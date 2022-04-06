@@ -34,44 +34,56 @@
     </view>
 </view>
 
+<ad appid="{{adid}}" apid="{{ad2}}" class="ad" type="feed"></ad>
 
-<ad appid="{{adid}}" apid="{{ad2}}" class="ad" type="feed" ></ad>
-
-<view class="post-center" style="margin-bottom:32px;" >
-<view class="mb-md-4">相关阅读</view>
-    <view class="post-li" s-for="item, index in result.RelatedList" s-key="{{ index }}" bindtap="detailsBtn" data-id='{{ item.id }}'>
+<view class="post-center" style="margin-bottom:32px;">
+    <view class="mb-md-4">相关阅读</view>
+    <view class="post-li" s-for="item, index in result.RelatedList" s-key="{{ index }}" bindtap="detailsBtn"
+        data-id='{{ item.id }}'>
         <view class="post-hx">{{ item.title }}</view>
     </view>
     <br><br><br>
 </view>
 
+<view s-if="{{result.postcon}}">
+    <scroll-view style="height:750rpx;" scroll-y="{{true}}">
+        <comment-list class="list" vue-id="a35a1374-6" comment-param="{{commentParam}}"
+            detail-path="{{detailPath}}" toolbar-config="{{toolbarConfig}}" bindclickcomment="clickComment">
+        </comment-list>
+    </scroll-view>
+</view>
 
-    <view class="cu-bar tabbar bg-white shadow foot">
-        <view class="cu-bar tabbar border shop" style="width:100%;">
-            <navigator class="action text-black" open-type="switchTab" url="/pages/home/index">
-                <smt-icon name="home"/>首页
-            </navigator>
-            <view bindtap="commentshow" class="action text-black"><smt-icon name="message"/>评论</view>
-            <view class="btn-group">
-                <button class="cu-btn bg-green round" open-type="contact">在线咨询</button>
-                <block><button class="cu-btn bg-red round" bind:tap="smtform" ><smt-icon name="discuss" size="15px" color="#ffffff"/>在线留言</button></block>
-                </view>
+<view s-else>
+<view class="cu-bar tabbar bg-white shadow foot">
+    <view class="cu-bar tabbar border shop" style="width:100%;">
+        <navigator class="action text-black" open-type="switchTab" url="/pages/home/index">
+            <smt-icon name="home" />首页
+        </navigator>
+        <view bindtap="commentshow" class="action text-black">
+            <smt-icon name="message" />评论{{result.contacton}}</view>
+        <view class="btn-group">
+            <button s-if="{{result.contacton}}" class="cu-btn bg-green round" open-type="contact">在线咨询</button>
+            <block s-if="{{result.onask}}"><button class="cu-btn bg-red round" bind:tap="smtform">
+                    <smt-icon name="discuss" size="15px" color="#ffffff" />预约咨询</button></block>
+            <block s-else><button class="cu-btn bg-red round" bind:tap="smttel">
+                    <smt-icon name="discuss" size="15px" color="#ffffff" />拨打电话</button></block>
         </view>
     </view>
-    <view class="cu-modal bottom-modal interactionModal show" s-if="{{interactionModal}}">
-        <view class="cu-dialog" style="border-top-left-radius:10px;border-top-right-radius:10px;">
-            <view class="cu-bar bg-white">
-                <view bindtap="commentshowa" class="action text-green" >收起</view>
-                <view class="content">互动窗口</view>
-                <view bindtap="commentshowa" class="action" >取消</view>
-            </view>
-            <view style="height:750rpx;">
-                <scroll-view style="height:750rpx;" scroll-y="{{true}}">
-                    <comment-list class="list" vue-id="a35a1374-6" comment-param="{{commentParam}}"
-                        detail-path="{{detailPath}}" toolbar-config="{{toolbarConfig}}" bindclickcomment="clickComment">
-                    </comment-list>
-                </scroll-view>
-            </view>
+</view>
+<view class="cu-modal bottom-modal interactionModal show" s-if="{{interactionModal}}">
+    <view class="cu-dialog" style="border-top-left-radius:10px;border-top-right-radius:10px;">
+        <view class="cu-bar bg-white">
+            <view bindtap="commentshowa" class="action text-green">收起</view>
+            <view class="content">互动窗口</view>
+            <view bindtap="commentshowa" class="action">取消</view>
+        </view>
+        <view style="height:750rpx;">
+            <scroll-view style="height:750rpx;" scroll-y="{{true}}">
+                <comment-list class="list" vue-id="a35a1374-6" comment-param="{{commentParam}}"
+                    detail-path="{{detailPath}}" toolbar-config="{{toolbarConfig}}" bindclickcomment="clickComment">
+                </comment-list>
+            </scroll-view>
         </view>
     </view>
-
+</view>
+</view>
