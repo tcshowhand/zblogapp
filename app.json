@@ -5,7 +5,7 @@
         "pages/article/index",
         "pages/page/index",
         "pages/search/index",
-        "pages/about/index",
+        "pages/user/index",
         "pages/sorts/index",
         "pages/smtform/index",
         "pages/login/index",
@@ -13,6 +13,10 @@
         "pages/askinfo/index",
         "pages/kong/index",
         "pages/konginfo/index",
+        "pages/caseinfo/index",
+        "pages/caselist/index",
+        "pages/prolist/index",
+        "pages/proinfo/index",
         "swan-sitemap/index"
     ],
     "window": {
@@ -52,13 +56,7 @@
                 "text": "分类"
             },
             {
-                "pagePath": "pages/search/index",
-                "iconPath": "images/icon/fenxiang.png",
-                "selectedIconPath": "images/icon/fenxiang_fill.png",
-                "text": "搜索"
-            },
-            {
-                "pagePath": "pages/about/index",
+                "pagePath": "pages/user/index",
                 "iconPath": "images/icon/daima.png",
                 "selectedIconPath": "images/icon/daima_fill.png",
                 "text": "个人中心"

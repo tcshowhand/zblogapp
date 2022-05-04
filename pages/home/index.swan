@@ -1,4 +1,11 @@
 <!--index.wxml-->
+<navigator class="search-header" url="/pages/search/index">
+    <view class="search-bar" bindtap="searchBtn">
+        <text class="cuIcon-search"></text>
+        <input placeholder="填写相关内容关键词" confirm-type="search"  bindconfirm="searchSubmit" class="search-input" />
+        <image bindtap="searchSubmit" class="search-icon" src="../../images/icon/search-icon.svg" mode="aspectFill" />
+    </view>
+</navigator>
 <banner moduleId="{{36}}"/>
 <view class='funcs'>
     <view class='func' s-for="item, index in toolnav" s-key="{{index}}">

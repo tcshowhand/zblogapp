@@ -1,0 +1,121 @@
+<view>
+  <!-- 用户信息 -->
+  <view class="user" s-if="{{ onask }}">
+    <view class="user-header" style="background-image: url({{ aboutback }})">
+      <!-- 已登录 -->
+      <view s-if="{{ isLogin }}" class="user-header-cont">
+        <view class="user-header-avatar">
+          <open-data class="" lang="zh_CN" type="userAvatarUrl"></open-data>
+        </view>
+        <open-data class="user-header-cont-name" lang="zh_CN" type="userNickName"></open-data>
+      </view>
+      <!-- 未登录 -->
+      <view s-else class="user-header-cont" catchtap="onLogin">
+        <view class="user-header-avatar">
+          <image src="{{ userimg }}"></image>
+        </view>
+        <view class="user-header-cont-name">点击登录</view>
+      </view>
+    </view>
+    <!-- 订单导航栏 -->
+    <view class="order-navbar">
+      <form bindsubmit="onTargetOrder" data-type="4">
+        <button formType="submit" class="btn-normal">
+          <view class="order-navbar-header dis-flex">
+            <text class="f-30">全部预约</text>
+            <view class="dis-flex flex-y-center">
+              <smt-icon class="iconfont icon-xiangyoujiantou user-orderJtou" name="arrow" size="26rpx" />
+            </view>
+          </view>
+        </button>
+      </form>
+      <view class="order-navbar-footer dis-flex m-top10">
+        <view class="order-navbar-item flex-box">
+          <form bindsubmit="onTargetOrder" data-type="0">
+            <button formType="submit" class="btn-normal">
+                <smt-icon class="order-navbar__icon" name="invoice-m" />
+                <text class="order-navbar__name">待响应</text>
+            </button>
+          </form>
+        </view>
+        <view class="order-navbar-item flex-box">
+          <form bindsubmit="onTargetOrder" data-type="1">
+            <button formType="submit" class="btn-normal">
+              <smt-icon class="order-navbar__icon" name="invoice-m" />
+              <text class="order-navbar__name">待评价</text>
+              <text class="order-badge" s-if="{{orderCount.payment > 0}}">{{orderCount.payment}}</text>
+            </button>
+          </form>
+        </view>
+        <view class="order-navbar-item flex-box">
+          <form bindsubmit="onTargetOrder" data-type="2">
+            <button formType="submit" class="btn-normal">
+              <smt-icon class="order-navbar__icon" name="invoice-m" />
+              <text class="order-navbar__name">已结束</text>
+              <text class="order-badge" s-if="{{orderCount.delivery > 0}}">{{orderCount.delivery}}</text>
+            </button>
+          </form>
+        </view>
+        <view class="order-navbar-item flex-box">
+          <form bindsubmit="onTargetOrder" data-type="3">
+            <button formType="submit" class="btn-normal">
+              <smt-icon class="order-navbar__icon" name="invoice-m" />
+              <text class="order-navbar__name">已取消</text>
+              <text class="order-badge" s-if="{{orderCount.received > 0}}">{{orderCount.received}}</text>
+            </button>
+          </form>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view s-else>
+      <image src="{{aboutback}}" mode="heightFix"
+      lazy-load='true' />
+  </view>
+  <!-- 菜单列表 -->
+  <view class="menus-list m-top20">
+    <form s-if="{{ announceid }}" bindtap="onListItemTap" data-id="{{ announceid }}">
+      <button formType="submit" class="btn-normal">
+        <view class="menus-item dis-flex b-f">
+          <view class="menus-item__left flex-box dis-flex flex-y-center">
+            <text class="iconfont icon-help f-34"></text>
+            <text class="menus-item__name f-30">免责声明</text>
+          </view>
+          <view class="menus-item__right flex-box dis-flex flex-x-end flex-y-center">
+              <smt-icon class="iconfont icon-xiangyoujiantou f-26 col-7" name="arrow" size="26rpx" />
+          </view>
+        </view>
+      </button>
+    </form>
+    <form s-if="{{ announceid }}" bindtap="onListItemTap" data-id="{{ aboutid }}">
+      <button formType="submit" class="btn-normal">
+        <view class="menus-item dis-flex b-f">
+          <view class="menus-item__left flex-box dis-flex flex-y-center">
+            <text class="iconfont icon-help f-34"></text>
+            <text class="menus-item__name f-30">关于我们</text>
+          </view>
+          <view class="menus-item__right flex-box dis-flex flex-x-end flex-y-center">
+              <smt-icon class="iconfont icon-xiangyoujiantou f-26 col-7" name="arrow" size="26rpx" />
+          </view>
+        </view>
+      </button>
+    </form>
+    <button s-if="{{ contacton }}" open-type="contact" class="btn-normal">
+        <view class="menus-item dis-flex b-f">
+          <view class="menus-item__left flex-box dis-flex flex-y-center">
+            <text class="iconfont icon-icon_service f-34"></text>
+            <text class="menus-item__name f-30">联系客服</text>
+          </view>
+        </view>
+    </button>
+
+    <button s-if="{{ isLogin }}" bindtap="clearStorage" class="btn-normal">
+        <view class="menus-item dis-flex b-f">
+          <view class="menus-item__left flex-box dis-flex flex-y-center">
+            <text class="iconfont icon-icon_service f-34"></text>
+            <text class="menus-item__name f-30">退出登录</text>
+          </view>
+        </view>
+    </button>
+  </view>
+</view>

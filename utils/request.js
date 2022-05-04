@@ -25,7 +25,7 @@ function requestapi(url, params, method, resolve, reject,args = { token: false})
             'Content-Type': 'application/x-www-form-urlencoded',
             'Cache-Control': 'nax-age=43200',
         };
-        var cloudCache=true;
+        var cloudCache=false;
     }
 
     swan.request({

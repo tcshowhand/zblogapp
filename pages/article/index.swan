@@ -28,10 +28,16 @@
                 <follow-swan size="default" type="{{ item.type }}" bindfavorstatuschange="statuschange" />
             </view>
         </view>
+        <image src="../../images/icon/guanzhu.jpg" style="width:100%;height:55px;margin-top:15px;"></image>
     </view>
-    <view class="post-content">
-        <rich-text nodes="{{result.Content}}" preview="true"></rich-text>
+    <view class="post-content" selectable="true">
+        <mp-html content="{{ result.Content }}" lazy-load="true"
+            container-style="white-space:pre-wrap;word-break:break-all" selectable="{{true}}" />
     </view>
+
+    <button class="reward-bt" open-type="share">
+        分享
+    </button>
 </view>
 
 <ad appid="{{adid}}" apid="{{ad2}}" class="ad" type="feed"></ad>
@@ -44,7 +50,6 @@
     </view>
     <br><br><br>
 </view>
-
 <view s-if="{{result.postcon}}">
     <scroll-view style="height:750rpx;" scroll-y="{{true}}">
         <comment-list class="list" vue-id="a35a1374-6" comment-param="{{commentParam}}"
@@ -52,7 +57,6 @@
         </comment-list>
     </scroll-view>
 </view>
-
 <view s-else>
 <view class="cu-bar tabbar bg-white shadow foot">
     <view class="cu-bar tabbar border shop" style="width:100%;">
@@ -60,7 +64,7 @@
             <smt-icon name="home" />首页
         </navigator>
         <view bindtap="commentshow" class="action text-black">
-            <smt-icon name="message" />评论{{result.contacton}}</view>
+            <smt-icon name="message" />评论</view>
         <view class="btn-group">
             <button s-if="{{result.contacton}}" class="cu-btn bg-green round" open-type="contact">在线咨询</button>
             <block s-if="{{result.onask}}"><button class="cu-btn bg-red round" bind:tap="smtform">

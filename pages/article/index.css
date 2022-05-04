@@ -102,15 +102,7 @@
 
 /** 分享 **/
 
-.reward-bt{
-    width: 40px;
-    height: 40px;
-    border-radius: 50px;
-    text-align: center;
-    margin: auto;
-    margin-top: 24px;
-    border:1px solid rgba(0,0,0,.2);
-}
+
 
 swan-follow-swan, swan-follow-swan[type=primary]:after {
     border-radius:30px;
@@ -974,4 +966,16 @@ button.cuIcon.lg {
     margin:0 auto 1.3333333333333333vw;
     text-align:center;
     font-size:5.333333333333333vw;
+}
+
+.reward-bt {
+    width: 150px;
+    border-radius: 50px;
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    min-width: 95px;
+    color: #fff;
+    background-color: #ff545b;
+    border-color: #ff545b;
+    box-shadow: 0 10px 20px -5px rgb(255 62 70 / 60%);
 }
