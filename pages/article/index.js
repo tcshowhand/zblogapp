@@ -4,8 +4,8 @@ import utils from '../../utils/request.js';
 Page({
     data: {
         id: '',
-        adid: utils.adid,
-        ad2: utils.ad2,
+        adid: 0,
+        ad2: 0,
         result: {},
         RelatedList: [],
         abstract: '',
@@ -71,7 +71,9 @@ Page({
                 'toolbarConfig.share.path': '/pages/article/index?id=' + this.data.id,
                 'detailPath': '/pages/article/index?id=' + this.data.id,
                 'result': post,
-                'RelatedList': post.RelatedList
+                'RelatedList': post.RelatedList,
+                'adid': res.data.post.adid,
+                'ad2': res.data.post.ad2
             });
         });
     },

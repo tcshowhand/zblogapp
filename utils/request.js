@@ -25,7 +25,7 @@ function requestapi(url, params, method, resolve, reject,args = { token: false})
             'Content-Type': 'application/x-www-form-urlencoded',
             'Cache-Control': 'nax-age=43200',
         };
-        var cloudCache=false;
+        var cloudCache=true;
     }
 
     swan.request({
@@ -213,9 +213,6 @@ module.exports = {
         });
     },
     sitemap: urls.home,
-    adid: urls.adid,
-    ad1: urls.ad1,
-    ad2: urls.ad2,
     toDate: toDate,
     formatMsgTime: formatMsgTime
 };

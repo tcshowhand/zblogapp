@@ -10,8 +10,8 @@ Page({
         hostList: [],
         page: 1,
         state: false,
-        adid: utils.adid,
-        ad1: utils.ad1,
+        adid: 0,
+        ad1: 0,
     },
     onLoad: function (options) {
         this.getHome();
@@ -68,7 +68,9 @@ Page({
             this.setData({
                 toolnav: res.data.toolnav,
                 navimg: res.data.info.navimg,
-                onask: res.data.info.onask
+                onask: res.data.info.onask,
+                adid: res.data.info.adid,
+                ad1: res.data.info.ad1,
             });
             swan.setNavigationBarTitle({
                 title: res.data.info.name
