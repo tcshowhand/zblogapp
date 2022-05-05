@@ -6,7 +6,7 @@
         <image bindtap="searchSubmit" class="search-icon" src="../../images/icon/search-icon.svg" mode="aspectFill" />
     </view>
 </navigator>
-<banner moduleId="{{36}}"/>
+<banner s-if="{{bannerid}}" moduleId="{{bannerid}}"/>
 <view class='funcs'>
     <view class='func' s-for="item, index in toolnav" s-key="{{index}}">
     <navigator url="{{item.Url}}" class="overlay-hover" hover-class="none">
@@ -73,7 +73,8 @@
                 </view>
             </view>
         </view>
-        <ad s-if="{{ index%10 == 3 }}" appid="{{adid}}" apid="{{ad1}}" class="ad" type="feed" ></ad>
+
+        <ad s-if="{{ index%10 == 3 && ad1}}" appid="{{adid}}" apid="{{ad1}}" class="ad" type="feed" ></ad>
     </view>
     <view class="read-more cu-load {{!state?'loading':'over'}}"></view>
 </view>

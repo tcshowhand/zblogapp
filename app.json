@@ -13,10 +13,6 @@
         "pages/askinfo/index",
         "pages/kong/index",
         "pages/konginfo/index",
-        "pages/caseinfo/index",
-        "pages/caselist/index",
-        "pages/prolist/index",
-        "pages/proinfo/index",
         "swan-sitemap/index"
     ],
     "window": {

@@ -9,7 +9,7 @@ Page({
      */
     data: {
         state: true,
-        id: '',
+        id: 4,
         title: '',
         intro: '',
         page: '1',
@@ -30,10 +30,20 @@ Page({
             'page': this.data.page
         }).then(res => {
             var datas = res.data.list;
-            this.setData({
-                navList: this.data.navList.concat(datas),
-                typename:res.data.typename
-            });
+
+            if(this.data.page==1){
+                this.setData({
+                    navList: datas,
+                    id: this.data.id,
+                    typename:res.data.typename
+                });
+            }else{
+                this.setData({
+                    navList: this.data.navList.concat(datas),
+                    typename:res.data.typename
+                });
+            }
+
             if (res.data.pagebar.PageFirst <= this.data.page) {
                 this.setData({
                     state: true
@@ -86,10 +96,16 @@ Page({
         this.refresh();
     },
 
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-        this.turnPage();
-    }
+    bindHeaderTap: function (e) {
+        this.data.id = e.currentTarget.dataset.type;
+        this.getNavList();
+    },
+    cancelOrder: function (e) {
+        let id= e.currentTarget.dataset.id;
+        utils.cancelask({
+            id: id
+        }).then(res => {
+            this.getNavList();
+        });
+    },
 });

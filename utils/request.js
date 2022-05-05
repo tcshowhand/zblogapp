@@ -212,6 +212,11 @@ module.exports = {
             resolve(apiService.REQUESTZBPPOST(urls.pay, params));
         });
     },
+    cancelask: params => {
+        return new Promise((resolve, reject) => {
+            resolve(apiService.REQUESTZBPPOST(urls.cancelask, params));
+        });
+    },
     sitemap: urls.home,
     toDate: toDate,
     formatMsgTime: formatMsgTime

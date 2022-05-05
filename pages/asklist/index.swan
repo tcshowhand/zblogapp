@@ -1,20 +1,67 @@
-<view class="container">
-    <view s-for="item, index in navList" s-key="{{index}}" bindtap="detailsBtn" data-id='{{item.id}}' isCustom="{{true}}" hover-stay-time="100">
-
-        <view class="wutu" >
-            <view class="list-content p-0">
-                <view class="list-body">
-                    {{ item.title }}
-                </view>
-                <view class="list-desc">
-                    <rich-text nodes="{{item.intro}}" class="h-2x " type="text"></rich-text>
-                </view>
-                <view class="list-footer">
-                    <text class="item-meta">{{ typename }}</text>
-                </view>
-            </view>
-        </view>
+<view class="container m-b5">
+  <view class="goods-detail-box">
+    <view class="header f-28 col-3">
+      <view catchtap="bindHeaderTap" class="{{id==='4'?'active':''}}" data-type="4">全部预约</view>
+      <view bindtap="bindHeaderTap" class="{{id==='0'?'active':''}}" data-type="0">待响应</view>
+       <view bindtap="bindHeaderTap" class="{{id==='1'?'active':''}}" data-type="1">待评价</view>
+      <view bindtap="bindHeaderTap" class="{{id==='2'?'active':''}}" data-type="2">已结束</view>
     </view>
-    <view class="read-more cu-load {{!state?'loading':'over'}}"></view>
+    <scroll-view scroll-y="{{true}}">
+      <view class="wrapper">
+        <view >
+          <view class="m-top20 " s-for="{{navList}}"  s-key="{{index}}">
+
+            <view bindtap="detailsBtn" data-id='{{item.id}}'>
+            <view class="order-box b-f">
+              <view class="order-header dis-flex">
+                <view class="flex-box t-l">
+                  <text class="title">{{ item.title }}</text>
+                </view>
+                <view class="flex-box t-r">
+                  <text class="cont">{{ item.Typename }}</text>
+                </view>
+              </view>
+            </view>
+            <view class="order-box b-f">
+              <view class="order-cont dis-flex">
+                <view class="order-num">
+                  <text>订单号：{{ item.Orderid }}</text>
+                </view>
+                <view class="order-time">
+                  <text>{{ item.PostTime }}</text>
+                </view>
+              </view>
+            </view>
+
+            <view class="order-box order-img_list">
+              <view class="order-shop">
+                <view bindtap="detail" class="order-list-box dis-flex" data-id="{{item.order_id}}">
+                  <rich-text nodes="{{item.intro}}" class="h-2x " type="text"></rich-text>
+                </view>
+              </view>
+            </view>
+            </view>
+            <view class="order-box b-f">
+              <view class="order-btn dis-flex">
+                <view class="order-left">
+                  <view class="text">
+                    <text>分配客服：</text>
+                    <text class="col-m">{{item.kefu}}</text>
+                  </view>
+                </view>
+                <view class="order-right">
+                  <view class="dis-flex">
+                    <view class="flex-box" >
+                      <view s-if="{{item.Type==0}}" bindtap="cancelOrder" class="btn-default" data-id="{{item.id}}">取消</view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+
+          </view>
+        </view>
+
+    </scroll-view>
+  </view>
 </view>
-<!-- 底部加载 -->

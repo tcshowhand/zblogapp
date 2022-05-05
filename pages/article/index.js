@@ -72,8 +72,9 @@ Page({
                 'detailPath': '/pages/article/index?id=' + this.data.id,
                 'result': post,
                 'RelatedList': post.RelatedList,
-                'adid': res.data.post.adid,
-                'ad2': res.data.post.ad2
+                'adid': res.data.post.adid.toString(),
+                'ad2': res.data.post.ad2.toString(),
+                'guanzhu': res.data.post.guanzhu
             });
         });
     },

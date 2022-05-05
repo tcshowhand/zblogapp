@@ -28,7 +28,7 @@
                 <follow-swan size="default" type="{{ item.type }}" bindfavorstatuschange="statuschange" />
             </view>
         </view>
-        <image src="../../images/icon/guanzhu.jpg" style="width:100%;height:55px;margin-top:15px;"></image>
+        <image src="{{ guanzhu }}" style="width:100%;height:55px;margin-top:15px;"></image>
     </view>
     <view class="post-content" selectable="true">
         <mp-html content="{{ result.Content }}" lazy-load="true"
@@ -39,9 +39,7 @@
         分享
     </button>
 </view>
-
-<ad appid="{{adid}}" apid="{{ad2}}" class="ad" type="feed"></ad>
-
+<ad s-if="{{ad2}}" appid="{{adid}}" apid="{{ad2}}" class="ad" type="feed"></ad>
 <view class="post-center" style="margin-bottom:32px;">
     <view class="mb-md-4">相关阅读</view>
     <view class="post-li" s-for="item, index in result.RelatedList" s-key="{{ index }}" bindtap="detailsBtn"

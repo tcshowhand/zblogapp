@@ -71,6 +71,7 @@ Page({
                 onask: res.data.info.onask,
                 adid: res.data.info.adid,
                 ad1: res.data.info.ad1,
+                bannerid: res.data.info.bannerid,
             });
             swan.setNavigationBarTitle({
                 title: res.data.info.name

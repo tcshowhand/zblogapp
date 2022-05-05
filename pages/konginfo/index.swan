@@ -8,7 +8,6 @@
 		</view>
 		<view class="card shadow">
 			<view class="avatar large border-skin1" style="background-image:url({{ result.Avatar }});">
-
 			</view>
 			<view class="attention">
 				<view class="msg" ></view>
@@ -47,7 +46,6 @@
 						<view class="right">{{ result.add }}</view>
 					</view>
 				</view>
-
 		</view>
 	</view>
 </view>

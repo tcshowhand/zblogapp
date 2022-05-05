@@ -14,13 +14,13 @@
     },
     "host": "baiduboxapp",
     "preview": {
-        "packageId": 1016208
+        "packageId": 1016859
     },
     "projectname": "bdapp",
     "publish": {
         "hideTips": true,
         "tips": [],
-        "version": "1.0.18"
+        "version": "1.0.19"
     },
     "setting": {
         "autoAudits": false,
@@ -29,7 +29,7 @@
     },
     "swan": {
         "baiduboxapp": {
-            "swanJsVersion": "3.340.31",
+            "swanJsVersion": "3.350.6",
             "extensionJsVersion": "1.21.2"
         }
     }
