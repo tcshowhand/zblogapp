@@ -89,3 +89,5 @@
     </view>
 </view>
 </view>
+
+<view class="back-top" s-if="{{ top }}" bindtap="jstop">↑</view>

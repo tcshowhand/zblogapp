@@ -979,3 +979,18 @@ button.cuIcon.lg {
     border-color: #ff545b;
     box-shadow: 0 10px 20px -5px rgb(255 62 70 / 60%);
 }
+
+.back-top{
+    top: 486px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 40px;
+    border-radius: 50px;
+    background: #42bbea;
+    position: fixed;
+    right: 0px;
+    margin-right: 34px;
+    color:#ffffff;
+}

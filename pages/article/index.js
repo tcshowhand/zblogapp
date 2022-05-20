@@ -13,6 +13,7 @@ Page({
             type: 'primary'
         }],
         sty: 0,
+        top: 0,
         disabled: true,
         // 关注
         commentParam: {
@@ -91,6 +92,9 @@ Page({
             });
             var article = res.data.post;
             res.data.post.UpdateTime = utils.toDate(Number(res.data.post.UpdateTime) * 1000, 1);
+            swan.setDocumentTitle({
+                title: article.Title
+            });
             swan.setPageInfo({
                 title: article.Title,
                 keywords: article.TagsName,
@@ -177,4 +181,14 @@ Page({
             phoneNumber: this.data.result.tel
         });
     },
+    onPageScroll(e) {
+        this.setData({
+            top: e.scrollTop > 500
+        });
+    },
+    jstop(){
+        swan.pageScrollTo({
+            scrollTop: 0,
+        });
+    }
 });
