@@ -4,8 +4,8 @@ const api = config.domain + '/zb_system/api.php';
 
 const urls = {
   settings: api + '?mod=ytecn&act=info',
-  home: api + '?mod=post&act=list&sortby=PostTime&order=desc',
-  sortslist: api + '?mod=category&act=list&sortby=Order',
+  home: api + '?mod=ytecn&act=list&sortby=PostTime&order=desc',
+  sortslist: api + '?mod=ytecn&act=clist&sortby=Order',
   articleinfo: api + '?mod=post',
   category: api + '?mod=category&act=get',
   smtform: api + '?mod=ytecn&act=smtform',

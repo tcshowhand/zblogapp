@@ -18,7 +18,8 @@ Page({
     },
     getHome() {
         utils.getHome({
-            page: this.data.page
+            page: this.data.page,
+            list: '1'
         }).then(res => {
             var datas = res.data.list;
             const datacc = datas.map(item => {

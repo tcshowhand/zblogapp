@@ -1,5 +1,6 @@
 <view class="post-center">
     <view class="post-content">
-        <rich-text nodes="{{data.Content}}" preview="true"></rich-text>
+        <mp-html content="{{ data.Content }}" lazy-load="true"
+            container-style="white-space:pre-wrap;word-break:break-all" selectable="{{true}}" />
     </view>
 </view>
